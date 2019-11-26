@@ -69,6 +69,7 @@ input.addEventListener('keypress', function (event) {
         alert((error_msg['responseText']));
       }
     });
+    $('#todo-list').empty()
     loadTodos()
     input.value = '';
   }
