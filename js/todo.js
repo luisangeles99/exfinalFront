@@ -63,12 +63,13 @@ input.addEventListener('keypress', function (event) {
       data: json_to_send,
       success: function(data){
         console.log(data)
-        loadTodos()
+        
       },
       error: function(error_msg) {
         alert((error_msg['responseText']));
       }
     });
+    loadTodos()
     input.value = '';
   }
 })

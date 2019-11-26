@@ -15,8 +15,8 @@ $('#signup_button').on('click', function(){
   json_to_send = JSON.stringify(json_to_send);
 
   $.ajax({
-    url: 'http://localhost:3000/users',
-    // url: 'https://tuapp.herokuapp.com/users',
+    //url: 'http://localhost:3000/users',
+    url: 'https://exfinal-a01273884.herokuapp.com/users',
     headers: {
         'Content-Type':'application/json'
     },
