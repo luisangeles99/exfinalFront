@@ -63,6 +63,7 @@ input.addEventListener('keypress', function (event) {
       data: json_to_send,
       success: function(data){
         console.log(data)
+        loadTodos()
       },
       error: function(error_msg) {
         alert((error_msg['responseText']));
@@ -92,5 +93,22 @@ function addTodo(id, todoText, completed) {
 
 
 $('#logout').on('click', function(){
-  
+  $.ajax({
+    //url: 'http://localhost:3000/todos',
+    url: 'https://exfinal-a01273884.herokuapp.com/logout',
+    headers: {
+        'Content-Type':'application/json',
+        'Authorization': 'Bearer ' + token
+    },
+    method: 'POST',
+    dataType: 'json',
+    success: function(data){
+      alert('Cerraste sesión da refresh');
+      window.location = './index.html'
+    },
+    error: function(error_msg) {
+      alert((error_msg['responseText']));
+      window.location = './index.html'
+    }
+  });
 })
